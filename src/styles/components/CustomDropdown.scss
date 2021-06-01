@@ -1,0 +1,44 @@
+.custom-dropdown {
+  position: relative;
+  width: 400px;
+  .trigger {
+    background-color: transparent;
+    text-align: left;
+    border: 0px;
+    padding: 0px;
+    display: block;
+    width: 100%;
+  }
+  .place-holder {
+    border-bottom: 3px solid $primary;
+    width: 100%;
+    padding: 0.5rem 0.25rem;
+    font-size: 1.3rem;
+    color: #a7a9c0;
+  }
+  .label {
+    width: 100%;
+    border: 2px solid $primary;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .options {
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    border: 2px solid $primary;
+    border-top: 0px;
+    border-radius: 0px 0px 15px 15px;
+    width: 100%;
+
+    .option-item {
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 1px solid $primary;
+      display: block;
+      &:last-child {
+        border-bottom: 0px;
+      }
+    }
+  }
+}
