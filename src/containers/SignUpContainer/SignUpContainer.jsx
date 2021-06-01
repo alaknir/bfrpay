@@ -3,11 +3,13 @@ import { Accordion, Card } from "react-bootstrap";
 
 import EmploymentDetails from "./EmploymentDetails";
 import BankConnectionDetails from "./BankConnectionDetails";
+import { postSaveEmploymentStatus } from "../../services/singup";
 
 const SignUpContainer = () => {
   const [defaultActiveKey, setDefaultActiveKey] = useState("1");
   const onNextClick = () => {
     setDefaultActiveKey("2");
+    postSaveEmploymentStatus();
   };
 
   return (
