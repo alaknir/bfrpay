@@ -7,6 +7,7 @@
     background: $primary;
     color: #fff;
     justify-content: center;
+    text-align: right;
   }
   .employment-type-drp-template {
     padding: 0.5rem 1rem;
@@ -25,14 +26,62 @@
 
   .timeline-wrapper {
     width: 70%;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     .timeline {
+      height: 100%;
+      position: relative;
+      &::before {
+        display: block;
+        content: "";
+        height: 100%;
+        width: 2px;
+        left: 40px;
+        position: absolute;
+      }
+      &.active-0 {
+        &::before {
+          background: linear-gradient(
+            187deg,
+            rgba(0, 208, 176, 1) 20%,
+            $primary 80%
+          );
+        }
+      }
+      &.active-1 {
+        &::before {
+          background: linear-gradient(
+            187deg,
+            rgba(0, 208, 176, 1) 25%,
+            $primary 75%
+          );
+        }
+      }
+      &.active-2 {
+        &::before {
+          background: linear-gradient(
+            187deg,
+            rgba(0, 208, 176, 1) 35%,
+            $primary 65%
+          );
+        }
+      }
+      &.active-3 {
+        &::before {
+          background: linear-gradient(
+            187deg,
+            rgba(0, 208, 176, 1) 100%,
+            $primary 0%
+          );
+        }
+      }
       .card {
         border: 0px;
+        background-color: transparent;
         .card-header {
           border-bottom: 0px;
-          background-color: #fff;
+          background-color: transparent;
           .toggle {
             display: flex;
             align-items: center;
@@ -43,17 +92,22 @@
             margin: 0px;
             .icon {
               background-color: #fff;
-              border: 2px solid #4d1fba;
+              border: 2px solid $primary;
               border-radius: 50%;
               height: 50px;
               width: 50px;
               display: flex;
               align-items: center;
               justify-content: center;
+              &.completed {
+                border: 2px solid rgba(0, 208, 176, 1);
+              }
               &.sign-up {
+                height: 35px;
+                border-color: transparent;
                 img {
-                  width: 55px;
-                  height: 55px;
+                  width: 35px;
+                  height: 35px;
                 }
               }
             }
